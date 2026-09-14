@@ -9,7 +9,9 @@ jobs:
         with:
           flutter-version: '3.19.6'
           channel: 'stable'
+      - run: mv lib/main.dart /tmp/main.dart || true
       - run: flutter create. --project-name mega_pro --platforms android --no-pub
+      - run: mv /tmp/main.dart lib/main.dart || true
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
