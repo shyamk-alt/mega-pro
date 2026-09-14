@@ -12,7 +12,7 @@ jobs:
       - name: Fix project
         run: |
           cp lib/main.dart /tmp/m.dart || true
-          flutter create. --project-name mega_pro --platforms android
+          flutter create . --project-name mega_pro --platforms android
           cp /tmp/m.dart lib/main.dart || true
       - run: flutter pub get
       - run: flutter build apk --release
@@ -20,4 +20,3 @@ jobs:
         with:
           name: mega-pro-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-    
